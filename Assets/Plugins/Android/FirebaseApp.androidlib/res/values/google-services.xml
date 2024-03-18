@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id">
+  <string name="gcm_defaultSenderId" translatable="false">534986532860</string>
+  <string name="google_storage_bucket" translatable="false">tri-via-toe-6e32e.appspot.com</string>
+  <string name="project_id" translatable="false">tri-via-toe-6e32e</string>
+  <string name="google_api_key" translatable="false">AIzaSyCkf3nvXpQBBFHzM_UpnF77t7WnoII00K0</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCkf3nvXpQBBFHzM_UpnF77t7WnoII00K0</string>
+  <string name="google_app_id" translatable="false">1:534986532860:android:933f4acd2168c890b47479</string>
+</resources>
