@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "534986532860",
+    "project_id": "tri-via-toe-6e32e",
+    "storage_bucket": "tri-via-toe-6e32e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:534986532860:android:386724230d389757b47479",
+        "android_client_info": {
+          "package_name": "om.dagoeng.triviatoe"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkf3nvXpQBBFHzM_UpnF77t7WnoII00K0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
