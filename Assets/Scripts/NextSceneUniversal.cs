@@ -1,14 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class NextSceneUniversal : MonoBehaviour
+public class SceneLoader : MonoBehaviour
 {
-    public string sceneName;
+    // This variable will be set in the Unity Inspector
+    public string nextSceneName;
 
-    public void ChangeScene()
+    // This method can be called to load the next scene
+    public void LoadNextScene()
     {
-        SceneManager.LoadScene(sceneName);
+        // Check if the nextSceneName is not empty
+        if (!string.IsNullOrEmpty(nextSceneName))
+        {
+            // Load the scene with the specified name
+            UnityEngine.SceneManagement.SceneManager.LoadScene(nextSceneName);
+        }
+        else
+        {
+            Debug.LogWarning("Next scene name is not set in the inspector.");
+        }
     }
 }

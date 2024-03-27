@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BoardScript : MonoBehaviour
+public class TicTacToe : MonoBehaviour
 {
     [SerializeField] private Image[] clueAboveImages; // Array untuk clue di atas
     [SerializeField] private Image[] clueLeftImages; // Array untuk clue di kiri

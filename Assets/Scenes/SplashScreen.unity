@@ -531,8 +531,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 729791742}
-        m_TargetAssemblyTypeName: NextSceneBtn, Assembly-CSharp
-        m_MethodName: ChangeScene
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: LoadNextScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -742,9 +742,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 729791739}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78dd6532fb84e492084da948395732ed, type: 3}
+  m_Script: {fileID: 11500000, guid: 91b37858f4551c24cb15a8a402b8a80a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextSceneName: MainMenu
 --- !u!1 &890339148
 GameObject:
   m_ObjectHideFlags: 0
