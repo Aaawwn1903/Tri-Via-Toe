@@ -1,47 +1,40 @@
-using System.Threading.Tasks;
 using UnityEngine;
-using Firebase.Storage;
+using UnityEngine.UI;
+using System.Collections.Generic;
 
-public class FirebaseImageDownloader : MonoBehaviour
+public class ImageRandomizer : MonoBehaviour
 {
-    public string imagePath;  // Inspector field to set image path (relative to storage bucket)
+    public Image[] imageObjects; // Array of Image objects to display images
+    public Sprite[] images; // Array of sprites to be randomly assigned
 
-    private Firebase.Storage.FirebaseStorage storage;
-    private UnityEngine.UI.RawImage imageUI;  // Reference to the RawImage UI element (assign in Inspector)
-
-    private async void Start()
+    void Start()
     {
-        storage = Firebase.Storage.FirebaseStorage.DefaultInstance;
-        imageUI = GetComponent<UnityEngine.UI.RawImage>();  // Assuming the script is on the same GameObject
-
-        if (string.IsNullOrEmpty(imagePath))
-        {
-            Debug.LogError("Please set the image path in the inspector");
-            return;
-        }
-
-        await DownloadAndDisplayImage();
+        RandomizeImages();
     }
 
-    private async Task DownloadAndDisplayImage()
+    void RandomizeImages()
     {
-        StorageReference imageRef = storage.GetReferenceFromUrl("https://firebasestorage.googleapis.com/v0/b/tri-via-toe-6e32e.appspot.com/o/Person.png");
+        List<Sprite> shuffledImages = new List<Sprite>(images); // Copy the images array to shuffle
+        Shuffle(shuffledImages); // Shuffle the list of images
 
-        try
+        // Assign shuffled images to the Image objects
+        for (int i = 0; i < Mathf.Min(imageObjects.Length, shuffledImages.Count); i++)
         {
-            // Option 1: Explicitly specify a large max size
-            byte[] imageBytes = await imageRef.GetBytesAsync(long.MaxValue);
-
-            // Option 2: Call without argument (if confident about no size restriction)
-            // byte[] imageBytes = await imageRef.GetBytesAsync();
-
-            Texture2D texture = new Texture2D(1, 1);
-            texture.LoadImage(imageBytes);
-            imageUI.texture = texture;
+            imageObjects[i].sprite = shuffledImages[i];
         }
-        catch (System.Exception e)
+    }
+
+    // Shuffle the list
+    void Shuffle<T>(List<T> list)
+    {
+        int n = list.Count;
+        while (n > 1)
         {
-            Debug.LogError($"Failed to download image: {e.Message}");
+            n--;
+            int k = Random.Range(0, n + 1);
+            T value = list[k];
+            list[k] = list[n];
+            list[n] = value;
         }
     }
 }
