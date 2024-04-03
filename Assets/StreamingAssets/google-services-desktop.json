@@ -13,7 +13,20 @@
           "package_name": "com.dagoeng.triviatoe"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "534986532860-0vlg0bjp303dea0vuc5plun5prolhcti.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dagoeng.triviatoe",
+            "certificate_hash": "448b64598dcd258854d9ad484bca612d822f8e04"
+          }
+        },
+        {
+          "client_id": "534986532860-h8de95el97nb30hlker9jk9lmbo7qdrd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCkf3nvXpQBBFHzM_UpnF77t7WnoII00K0"
@@ -21,7 +34,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "534986532860-h8de95el97nb30hlker9jk9lmbo7qdrd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "534986532860-athminp1cglhcci2hliepfm49bm3pieq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.dagoeng.triviatoe"
+              }
+            }
+          ]
         }
       }
     }

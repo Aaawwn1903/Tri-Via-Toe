@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/SplashScreen.unity
     guid: 3fc8acdd13e6c734bafef6554d6fdbcd
@@ -17,9 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DummyScene.unity
     guid: 32e990283c8ee0747bfec04c2d3e2629
-  - enabled: 0
-    path: Assets/Scenes/VersusGame.unity
-    guid: 6f662a02bd0474ee58856ad6699b4d35
+  - enabled: 1
+    path: Assets/Scenes/HowToPlay.unity
+    guid: 61540e7ceec435945b53f14a967359f3
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 7b833e3b89ce54745aebdcd24a65b7ea, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: d171c1977488e3345b1f84f2db70a6fe, type: 2}
