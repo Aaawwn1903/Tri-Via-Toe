@@ -14,7 +14,7 @@ public class CombinedScript : MonoBehaviour
     // FirestoreSearch variables
     public TMP_InputField searchInput;
     public TMP_Dropdown searchResultDropdown;
-    public Button submitButton;
+    // public Button submitButton;
     public string collectionName;
     public string documentName;
     public string fieldName;
@@ -27,7 +27,6 @@ public class CombinedScript : MonoBehaviour
 
         // FirestoreSearch initialization
         InitializeFirestoreSearch();
-
     }
 
     private void InitializeTicTacToe()
@@ -54,37 +53,20 @@ public class CombinedScript : MonoBehaviour
     private void InitializeFirestoreSearch()
     {
         db = FirebaseFirestore.DefaultInstance;
-        submitButton.onClick.AddListener(PerformSearch);
-        searchResultDropdown.onValueChanged.AddListener(delegate {
-            DropdownValueChanged(searchResultDropdown);
+        // submitButton.onClick.AddListener(PerformSearch);
+
+        // Menambahkan event listener pada input field untuk pencarian real-time
+        searchInput.onValueChanged.AddListener(delegate {
+            if (searchInput.text.Length >= 3)
+                PerformSearch();
         });
     }
-
-private void DropdownValueChanged(TMP_Dropdown dropdown)
-{
-    Debug.Log("Dropdown selection: " + dropdown.options[dropdown.value].text);
-    CombineAndLogValues();
-}
-
-private void CombineAndLogValues()
-{
-    int buttonIndex = 0; // You need to define the button index here based on your logic
-    int row = buttonIndex / 3;
-    int col = buttonIndex % 3;
-    string clueLeftImageName = clueLeftImages[row].sprite != null ? clueLeftImages[row].sprite.name : "null";
-    string clueAboveImageName = clueAboveImages[col].sprite != null ? clueAboveImages[col].sprite.name : "null";
-    string dropdownText = searchResultDropdown.options[searchResultDropdown.value].text;
-
-    // Combining the three values
-    string combinedValues = $"Combined values: ClueLeft={clueLeftImageName}, ClueAbove={clueAboveImageName}, DropdownText={dropdownText}";
-    Debug.Log(combinedValues);
-}
-
 
     public void PerformSearch()
     {
         string searchTerm = searchInput.text.ToLower();
         searchResultDropdown.ClearOptions();
+
         // Debug.Log("Starting search...");
         db.Collection(collectionName).Document(documentName).GetSnapshotAsync().ContinueWith(task =>
         {

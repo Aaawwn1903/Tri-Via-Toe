@@ -15,13 +15,13 @@ public class CrashlyticsTester : MonoBehaviour {
     {
         // Call the exception-throwing method here so that it's run
         // every frame update
-        throwExceptionEvery60Updates();
+        ThrowExceptionEvery60Updates();
     }
 
     // A method that tests your Crashlytics implementation by throwing an
     // exception every 60 frame updates. You should see reports in the
     // Firebase console a few minutes after running your app with this method.
-    void throwExceptionEvery60Updates()
+    void ThrowExceptionEvery60Updates()
     {
         if (updatesBeforeException > 0)
         {
