@@ -23,24 +23,23 @@ public class TicTacToeGame : MonoBehaviour
     public Button forceTieButton;
     public Button surrenderButton;
     public Image currentPlayerImage;
-    public GameObject confirmationPanel;
-    public Button confirmButton;
-    public Button cancelButton;
-    
+    public GameObject surrenderConfirmationPanel;
+    public GameObject forceTieConfirmationPanel;
+    public Button confirmForceTieButton;
+    public Button cancelForceTieButton;
+    public Button confirmSurrenderButton;
+    public Button cancelSurrenderButton;
 
     [Header("Firestore Configuration")]
     public string collectionName = "Answer";
 
-  
-
     private FirebaseFirestore db;
     private bool player1Turn = true;
     private int lastClickedButtonIndex = -1;
-    private float timePerPlayer = 15f;
+    public float timePerPlayer = 15f;
     private Coroutine timerCoroutine;
     private bool awaitingConfirmation = false;
     private Action confirmationAction;
-    
 
     private void Start()
     {
@@ -55,9 +54,12 @@ public class TicTacToeGame : MonoBehaviour
         StartTimer();
         forceTieButton.onClick.AddListener(() => ConfirmForceTie("Offer draw? Are you sure?"));
         surrenderButton.onClick.AddListener(() => ConfirmSurrender("Surrender to Player " + (player1Turn ? "2" : "1") + ". Are you sure?"));
-        confirmButton.onClick.AddListener(ConfirmAction);
-        cancelButton.onClick.AddListener(CancelAction);
-        confirmationPanel.SetActive(false);
+        confirmForceTieButton.onClick.AddListener(ConfirmForceTieAction);
+        cancelForceTieButton.onClick.AddListener(CancelForceTieAction);
+        confirmSurrenderButton.onClick.AddListener(ConfirmSurrenderAction);
+        cancelSurrenderButton.onClick.AddListener(CancelSurrenderAction);
+        surrenderConfirmationPanel.SetActive(false);
+        forceTieConfirmationPanel.SetActive(false);
         SetCurrentPlayerImage();
     }
 
@@ -86,73 +88,80 @@ public class TicTacToeGame : MonoBehaviour
     }
 
     private async void CheckValuesInFirestore(string clueLeftImageName, string clueAboveImageName, string dropdownValue)
+{
+    Debug.Log("Checking values in Firestore...");
+
+    bool foundMatch = false;
+
+    QuerySnapshot snapshot = await db.Collection(collectionName).GetSnapshotAsync();
+
+    foreach (DocumentSnapshot document in snapshot.Documents)
     {
-        Debug.Log("Checking values in Firestore...");
+        Dictionary<string, object> data = document.ToDictionary();
+        string corrAnswer = data.ContainsKey("corr_answer") ? data["corr_answer"].ToString() : "";
+        string horizontalChoice = data.ContainsKey("horizontal_choice") ? data["horizontal_choice"].ToString() : "";
+        string verticalChoice = data.ContainsKey("vertical_choice") ? data["vertical_choice"].ToString() : "";
 
-        bool foundMatch = false;
-
-        QuerySnapshot snapshot = await db.Collection(collectionName).GetSnapshotAsync();
-
-        foreach (DocumentSnapshot document in snapshot.Documents)
+        if (string.Equals(clueLeftImageName, verticalChoice, StringComparison.OrdinalIgnoreCase) &&
+            string.Equals(clueAboveImageName, horizontalChoice, StringComparison.OrdinalIgnoreCase) &&
+            string.Equals(dropdownValue, corrAnswer, StringComparison.OrdinalIgnoreCase))
         {
-            Dictionary<string, object> data = document.ToDictionary();
-            string corrAnswer = data.ContainsKey("corr_answer") ? data["corr_answer"].ToString() : "";
-            string horizontalChoice = data.ContainsKey("horizontal_choice") ? data["horizontal_choice"].ToString() : "";
-            string verticalChoice = data.ContainsKey("vertical_choice") ? data["vertical_choice"].ToString() : "";
-
-            if (string.Equals(clueLeftImageName, verticalChoice, StringComparison.OrdinalIgnoreCase) &&
-                string.Equals(clueAboveImageName, horizontalChoice, StringComparison.OrdinalIgnoreCase) &&
-                string.Equals(dropdownValue, corrAnswer, StringComparison.OrdinalIgnoreCase))
-            {
-                foundMatch = true;
-                Debug.Log("Success! Values matched with document: " + document.Id);
-                break;
-            }
+            foundMatch = true;
+            Debug.Log("Success! Values matched with document: " + document.Id);
+            break;
         }
-
-        ChangeButtonImage(foundMatch);
     }
+
+    if (!foundMatch)
+    {
+        Debug.LogWarning("No match found in Firestore.");
+    }
+
+    ChangeButtonImage(foundMatch);
+}
+
+
     private void SetCurrentPlayerImage()
     {
         currentPlayerImage.sprite = player1Turn ? imagesToShowOnMatch[0] : imagesToReplace[0];
     }
 
     private void ChangeButtonImage(bool foundMatch)
-{
-    StopTimer();
-
-    Sprite[] currentPlayerImages = player1Turn ? imagesToShowOnMatch : imagesToReplace;
-
-    if (foundMatch)
     {
-        // Reset the timer when a match is found
-        ResetTimer();
+        StopTimer();
 
-        buttons[lastClickedButtonIndex].GetComponent<Image>().sprite = currentPlayerImages[0];
-        buttons[lastClickedButtonIndex].interactable = false;
+        Sprite[] currentPlayerImages = player1Turn ? imagesToShowOnMatch : imagesToReplace;
 
-        if (CheckWinner())
+        if (foundMatch)
         {
-            Debug.Log("Player " + (player1Turn ? "1" : "2") + " wins!");
-            ShowGameOverPanel("Player " + (player1Turn ? "1" : "2") + " wins!");
+            // Reset the timer when a match is found
+            ResetTimer();
+
+            buttons[lastClickedButtonIndex].GetComponent<Image>().sprite = currentPlayerImages[0];
+            buttons[lastClickedButtonIndex].interactable = false;
+
+            if (CheckWinner())
+            {
+                Debug.Log("Player " + (player1Turn ? "1" : "2") + " wins!");
+                ShowGameOverPanel("Player " + (player1Turn ? "1" : "2") + " wins!");
+            }
+            else if (CheckTie())
+            {
+                Debug.Log("Game Tied!");
+                ShowGameOverPanel("Game Tied!");
+            }
+
+            player1Turn = !player1Turn;
+            SetCurrentPlayerImage();
         }
-        else if (CheckTie())
+        else
         {
-            Debug.Log("Game Tied!");
-            ShowGameOverPanel("Game Tied!");
+            player1Turn = !player1Turn;
+            SetCurrentPlayerImage();
         }
 
-        player1Turn = !player1Turn;
-        SetCurrentPlayerImage();
+        StartTimer();
     }
-    else
-    {
-        player1Turn = !player1Turn;
-        SetCurrentPlayerImage();
-    }
-
-    StartTimer();
-}
 
     private bool CheckWinner()
     {
@@ -206,82 +215,79 @@ public class TicTacToeGame : MonoBehaviour
     }
 
     private void ForceTie()
-{
-    // Stop the timer
-    StopTimer();
-
-    // Check if the game is already tied or if a player has won
-    if (!CheckTie() && !CheckWinner())
     {
-        // If not, set the game state to tie
-        ShowGameOverPanel("Game Tied!");
-    }
-}
+        // Stop the timer
+        StopTimer();
 
-private void Surrender()
-{
-    // Stop the timer
-    StopTimer();
+        // Check if the game is already tied or if a player has won
+        if (!CheckTie() && !CheckWinner())
+        {
+            // If not, set the game state to tie
+            ShowGameOverPanel("Game Tied!");
+        }
+    }
 
-    // Declare the opponent as the winner
-    if (player1Turn)
+    private void Surrender()
     {
-        ShowGameOverPanel("Player 2 wins by surrender!");
+        // Stop the timer
+        StopTimer();
+
+        // Declare the opponent as the winner
+        if (player1Turn)
+        {
+            ShowGameOverPanel("Player 2 wins by surrender!");
+        }
+        else
+        {
+            ShowGameOverPanel("Player 1 wins by surrender!");
+        }
     }
-    else
-    {
-        ShowGameOverPanel("Player 1 wins by surrender!");
-    }
-}
 
     private void ShowGameOverPanel(string message)
-{
-    // Stop the timer coroutine
-    StopTimer();
-    
-    // Show the game over panel
-    gameOverPanel.SetActive(true);
-    
-    // Update the game over message
-    TextMeshProUGUI gameOverText = gameOverPanel.GetComponentInChildren<TextMeshProUGUI>();
-    gameOverText.text = message;
-}
-
+    {
+        // Stop the timer coroutine
+        StopTimer();
+        
+        // Show the game over panel
+        gameOverPanel.SetActive(true);
+        
+        // Update the game over message
+        TextMeshProUGUI gameOverText = gameOverPanel.GetComponentInChildren<TextMeshProUGUI>();
+        gameOverText.text = message;
+    }
 
     private IEnumerator Timer()
-{
-    float currentTime = timePerPlayer;
-    playerTurn.text = "PLAYER'S " + (player1Turn ? "1" : "2") + " TURNS: " + (player1Turn ? "X" : "O");
-    
-    while (currentTime > 0f)
     {
-        // Check for game tied or player wins before decrementing time
-        if (CheckTie() || CheckWinner())
+        float currentTime = timePerPlayer;
+        playerTurn.text = "PLAYER'S " + (player1Turn ? "1" : "2") + " TURNS: " + (player1Turn ? "X" : "O");
+        playerTurn.color = player1Turn ? new Color(245f/255f, 77f/255f, 98f/255f) : new Color(135f/255f, 228f/255f, 58f/255f);
+        while (currentTime > 0f)
         {
-            StopTimer();
-            break;
+            // Check for game tied or player wins before decrementing time
+            if (CheckTie() || CheckWinner())
+            {
+                StopTimer();
+                break;
+            }
+            
+            yield return new WaitForSeconds(1f);
+            currentTime--;
+
+            timerText.text = currentTime.ToString();
+
+            // Debug.Log("Time remaining: " + currentTime);
         }
-        
-        yield return new WaitForSeconds(1f);
-        currentTime--;
 
-        timerText.text = currentTime.ToString();
-
-        Debug.Log("Time remaining: " + currentTime);
+        if (!CheckTie() && !CheckWinner())
+        {
+            // Time runs out, change player's turn
+            ChangeButtonImage(false);
+            mainCanvas.SetActive(false);
+            forceTieConfirmationPanel.SetActive(false);
+            surrenderConfirmationPanel.SetActive(false);
+            ResetTimer();
+        }
     }
-
-    if (!CheckTie() && !CheckWinner())
-    {
-        // Time runs out, change player's turn
-        ChangeButtonImage(false);
-        mainCanvas.SetActive(false);
-        confirmationPanel.SetActive(false);
-        ResetTimer();
-    }
-}
-
-
-
 
     private void StartTimer()
     {
@@ -302,44 +308,60 @@ private void Surrender()
         StopTimer();
         StartTimer();
     }
-     private void ConfirmForceTie(string confirmationMessage)
-{
-    if (!awaitingConfirmation)
+
+    private void ConfirmForceTie(string confirmationMessage)
     {
-        confirmationPanel.SetActive(true);
-        TextMeshProUGUI confirmationText = confirmationPanel.GetComponentInChildren<TextMeshProUGUI>();
-        confirmationText.text = confirmationMessage;
-        confirmationAction = ForceTie;
-        awaitingConfirmation = true;
+        if (!awaitingConfirmation)
+        {
+            forceTieConfirmationPanel.SetActive(true);
+            TextMeshProUGUI confirmationText = forceTieConfirmationPanel.GetComponentInChildren<TextMeshProUGUI>();
+            confirmationText.text = confirmationMessage;
+            confirmationAction = ForceTie;
+            awaitingConfirmation = true;
+        }
     }
-}
 
-private void ConfirmSurrender(string confirmationMessage)
-{
-    if (!awaitingConfirmation)
+    private void ConfirmSurrender(string confirmationMessage)
     {
-        confirmationPanel.SetActive(true);
-        TextMeshProUGUI confirmationText = confirmationPanel.GetComponentInChildren<TextMeshProUGUI>();
-        confirmationText.text = confirmationMessage;
-        confirmationAction = Surrender;
-        awaitingConfirmation = true;
+        if (!awaitingConfirmation)
+        {
+            surrenderConfirmationPanel.SetActive(true);
+            TextMeshProUGUI confirmationText = surrenderConfirmationPanel.GetComponentInChildren<TextMeshProUGUI>();
+            confirmationText.text = confirmationMessage;
+            confirmationAction = Surrender;
+            awaitingConfirmation = true;
+        }
     }
-}
 
-
-    private void ConfirmAction()
+    public void ConfirmForceTieAction()
     {
         if (confirmationAction != null)
         {
             confirmationAction();
             awaitingConfirmation = false;
-            confirmationPanel.SetActive(false);
+            forceTieConfirmationPanel.SetActive(false);
         }
     }
 
-    private void CancelAction()
+    public void CancelForceTieAction()
     {
         awaitingConfirmation = false;
-        confirmationPanel.SetActive(false);
+        forceTieConfirmationPanel.SetActive(false);
+    }
+
+    public void ConfirmSurrenderAction()
+    {
+        if (confirmationAction != null)
+        {
+            confirmationAction();
+            awaitingConfirmation = false;
+            surrenderConfirmationPanel.SetActive(false);
+        }
+    }
+
+    public void CancelSurrenderAction()
+    {
+        awaitingConfirmation = false;
+        surrenderConfirmationPanel.SetActive(false);
     }
 }
