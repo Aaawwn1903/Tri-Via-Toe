@@ -17,7 +17,7 @@ public class TicTacToeGame : MonoBehaviour
     public Sprite[] imagesToShowOnMatch;
     public Sprite[] imagesToReplace;
     public GameObject gameOverPanel;
-    public GameObject mainCanvas; 
+    public GameObject mainCanvas;
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI playerTurn;
     public Button forceTieButton;
@@ -29,6 +29,10 @@ public class TicTacToeGame : MonoBehaviour
     public Button cancelForceTieButton;
     public Button confirmSurrenderButton;
     public Button cancelSurrenderButton;
+    public Image noMatchImage;
+    public float fadeInTime = 0.5f;
+    public float fadeOutTime = 0.5f;
+    public float displayTime = 1f;
 
     [Header("Firestore Configuration")]
     public string collectionName = "Answer";
@@ -88,38 +92,38 @@ public class TicTacToeGame : MonoBehaviour
     }
 
     private async void CheckValuesInFirestore(string clueLeftImageName, string clueAboveImageName, string dropdownValue)
-{
-    Debug.Log("Checking values in Firestore...");
-
-    bool foundMatch = false;
-
-    QuerySnapshot snapshot = await db.Collection(collectionName).GetSnapshotAsync();
-
-    foreach (DocumentSnapshot document in snapshot.Documents)
     {
-        Dictionary<string, object> data = document.ToDictionary();
-        string corrAnswer = data.ContainsKey("corr_answer") ? data["corr_answer"].ToString() : "";
-        string horizontalChoice = data.ContainsKey("horizontal_choice") ? data["horizontal_choice"].ToString() : "";
-        string verticalChoice = data.ContainsKey("vertical_choice") ? data["vertical_choice"].ToString() : "";
+        Debug.Log("Checking values in Firestore...");
 
-        if (string.Equals(clueLeftImageName, verticalChoice, StringComparison.OrdinalIgnoreCase) &&
-            string.Equals(clueAboveImageName, horizontalChoice, StringComparison.OrdinalIgnoreCase) &&
-            string.Equals(dropdownValue, corrAnswer, StringComparison.OrdinalIgnoreCase))
+        bool foundMatch = false;
+
+        QuerySnapshot snapshot = await db.Collection(collectionName).GetSnapshotAsync();
+
+        foreach (DocumentSnapshot document in snapshot.Documents)
         {
-            foundMatch = true;
-            Debug.Log("Success! Values matched with document: " + document.Id);
-            break;
+            Dictionary<string, object> data = document.ToDictionary();
+            string corrAnswer = data.ContainsKey("corr_answer") ? data["corr_answer"].ToString() : "";
+            string horizontalChoice = data.ContainsKey("horizontal_choice") ? data["horizontal_choice"].ToString() : "";
+            string verticalChoice = data.ContainsKey("vertical_choice") ? data["vertical_choice"].ToString() : "";
+
+            if (string.Equals(clueLeftImageName, verticalChoice, StringComparison.OrdinalIgnoreCase) &&
+                string.Equals(clueAboveImageName, horizontalChoice, StringComparison.OrdinalIgnoreCase) &&
+                string.Equals(dropdownValue, corrAnswer, StringComparison.OrdinalIgnoreCase))
+            {
+                foundMatch = true;
+                Debug.Log("Success! Values matched with document: " + document.Id);
+                break;
+            }
         }
+
+        if (!foundMatch)
+        {
+            Debug.LogWarning("No match found in Firestore.");
+            StartCoroutine(AnimateNoMatchImage());
+        }
+
+        ChangeButtonImage(foundMatch);
     }
-
-    if (!foundMatch)
-    {
-        Debug.LogWarning("No match found in Firestore.");
-    }
-
-    ChangeButtonImage(foundMatch);
-}
-
 
     private void SetCurrentPlayerImage()
     {
@@ -247,10 +251,10 @@ public class TicTacToeGame : MonoBehaviour
     {
         // Stop the timer coroutine
         StopTimer();
-        
+
         // Show the game over panel
         gameOverPanel.SetActive(true);
-        
+
         // Update the game over message
         TextMeshProUGUI gameOverText = gameOverPanel.GetComponentInChildren<TextMeshProUGUI>();
         gameOverText.text = message;
@@ -260,7 +264,7 @@ public class TicTacToeGame : MonoBehaviour
     {
         float currentTime = timePerPlayer;
         playerTurn.text = "PLAYER'S " + (player1Turn ? "1" : "2") + " TURNS: " + (player1Turn ? "X" : "O");
-        playerTurn.color = player1Turn ? new Color(245f/255f, 77f/255f, 98f/255f) : new Color(135f/255f, 228f/255f, 58f/255f);
+
         while (currentTime > 0f)
         {
             // Check for game tied or player wins before decrementing time
@@ -269,7 +273,7 @@ public class TicTacToeGame : MonoBehaviour
                 StopTimer();
                 break;
             }
-            
+
             yield return new WaitForSeconds(1f);
             currentTime--;
 
@@ -293,6 +297,9 @@ public class TicTacToeGame : MonoBehaviour
     {
         StopTimer();
         timerCoroutine = StartCoroutine(Timer());
+
+        // Set the color of playerTurn text based on the player's turn
+        playerTurn.color = player1Turn ? new Color(245f / 255f, 77f / 255f, 98f / 255f) : new Color(135f / 255f, 228f / 255f, 58f / 255f);
     }
 
     private void StopTimer()
@@ -363,5 +370,39 @@ public class TicTacToeGame : MonoBehaviour
     {
         awaitingConfirmation = false;
         surrenderConfirmationPanel.SetActive(false);
+    }
+
+    private IEnumerator AnimateNoMatchImage()
+    {
+        noMatchImage.gameObject.SetActive(true);
+
+        // Fade in
+        float timer = 0f;
+        Color startColor = noMatchImage.color;
+        Color targetColor = new Color(startColor.r, startColor.g, startColor.b, 1f);
+        while (timer < fadeInTime)
+        {
+            timer += Time.deltaTime;
+            noMatchImage.color = Color.Lerp(startColor, targetColor, timer / fadeInTime);
+            yield return null;
+        }
+        noMatchImage.color = targetColor;
+
+        // Wait for display time
+        yield return new WaitForSeconds(displayTime);
+
+        // Fade out
+        timer = 0f;
+        startColor = noMatchImage.color;
+        targetColor = new Color(startColor.r, startColor.g, startColor.b, 0f);
+        while (timer < fadeOutTime)
+        {
+            timer += Time.deltaTime;
+            noMatchImage.color = Color.Lerp(startColor, targetColor, timer / fadeOutTime);
+            yield return null;
+        }
+        noMatchImage.color = targetColor;
+
+        noMatchImage.gameObject.SetActive(false);
     }
 }

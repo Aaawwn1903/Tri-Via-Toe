@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System;
 using System.Linq;
 using System.Collections;
+using Debug = UnityEngine.Debug;
 
 public class SinglePlayer : MonoBehaviour
 {
@@ -14,164 +15,221 @@ public class SinglePlayer : MonoBehaviour
     public Image[] clueAboveImages;
     public Image[] clueLeftImages;
     public Button[] buttons;
-    public Sprite[] imagesToReplace;
+    public Sprite[] imagesToShowOnMatch;
     public GameObject gameOverPanel;
     public TextMeshProUGUI timerText;
-    public Image currentPlayerImage;
-    public GameObject confirmationPanel;
-    public Button confirmButton;
-    public Button cancelButton;
-    public Button finishButton;
+    public float fadeInTime = 0.5f;
+    public float fadeOutTime = 0.5f;
+    public float displayTime = 1f;
+    public float gameTime = 60f;
+    public GameObject loadingAnimation; // Loading animation game object
 
     [Header("Firestore Configuration")]
     public string collectionName = "Answer";
 
     private FirebaseFirestore db;
-    private int lastClickedButtonIndex = -1;
-    private int imageChangeCount = 0;
-    private List<Tuple<Image, Image>> imagePairs = new List<Tuple<Image, Image>>();
-    private Coroutine stopwatchCoroutine;
-    private bool isGameFinished = false;
+    public Image noMatchImage;
+    public Image sameAnswerImage;
+
+    private Dictionary<Button, int> buttonMatches = new Dictionary<Button, int>();
+    private bool timerRunning = false; // Flag to control the timer coroutine
 
     private void Start()
     {
         db = FirebaseFirestore.DefaultInstance;
         submitButton.onClick.AddListener(SubmitData);
-        finishButton.onClick.AddListener(FinishGame);
+        // endGameButton.onClick.AddListener(EndGame); // Register end game button click listener
 
-        for (int i = 0; i < buttons.Length; i++)
+        // Initialize buttonMatches dictionary
+        foreach (var button in buttons)
         {
-            int buttonIndex = i;
-            buttons[i].onClick.AddListener(() => OnButtonClick(buttonIndex));
+            buttonMatches.Add(button, 0);
         }
 
-        CreateImagePairs();
-        StartStopwatch();
-        SetCurrentPlayerImage();
+        StartCoroutine(StartGameTimer()); // Start the game timer
     }
 
-    private void OnButtonClick(int buttonIndex)
+    private IEnumerator StartGameTimer()
     {
-        Debug.Log("Button clicked: " + buttonIndex);
-        lastClickedButtonIndex = buttonIndex;
+        timerRunning = true; // Start the timer
+        while (gameTime > 0 && timerRunning)
+        {
+            yield return new WaitForSeconds(1f);
+            gameTime--;
+            UpdateTimerDisplay();
+        }
+        if (timerRunning) // Ensure timerRunning is still true to prevent premature end game
+            EndGame(); // End the game when time runs out or timer is stopped
     }
 
-    private void SubmitData()
+    private void UpdateTimerDisplay()
     {
-        if (lastClickedButtonIndex == -1)
-        {
-            Debug.LogWarning("No button has been clicked.");
-            return;
-        }
+        TimeSpan timeSpan = TimeSpan.FromSeconds(gameTime);
+        timerText.text = string.Format("{0}", (int)timeSpan.TotalSeconds);
+    }
 
-        if (isGameFinished)
-        {
-            Debug.LogWarning("Game has finished.");
-            return;
-        }
+
+    private async void SubmitData()
+    {
+        // Disable submit button
+        submitButton.interactable = false;
+
+        // Pause timer and show loading animation
+        timerRunning = false;
+        loadingAnimation.SetActive(true);
 
         string dropdownValue = searchResultDropdown.options[searchResultDropdown.value].text;
 
-        // Create a set of image pairs containing current clue images and the button images
-        List<Tuple<Image, Image>> currentImagePairs = new List<Tuple<Image, Image>>();
-        for (int i = 0; i < clueLeftImages.Length; i++)
+        Debug.Log("Submitting data and checking values in Firestore...");    
+
+        int documentsChecked = 0;
+        int buttonsProcessed = 0;
+        int buttonImagesChanged = 0; // Reset buttonImagesChanged to 0
+
+        foreach (var button in buttons)
         {
-            currentImagePairs.Add(new Tuple<Image, Image>(clueLeftImages[i], clueAboveImages[i]));
-        }
-        currentImagePairs.Add(new Tuple<Image, Image>(buttons[lastClickedButtonIndex].GetComponent<Image>(), null));
+            int buttonIndex = Array.IndexOf(buttons, button);
+            int row = buttonIndex / 3;
+            int col = buttonIndex % 3;
+            string clueLeftImageName = clueLeftImages[row].sprite != null ? clueLeftImages[row].sprite.name : "null";
+            string clueAboveImageName = clueAboveImages[col].sprite != null ? clueAboveImages[col].sprite.name : "null";
 
-        // Check if current image pairs match with Firestore data
-        CheckValuesInFirestore(currentImagePairs, dropdownValue);
-    }
+            QuerySnapshot snapshot = await db.Collection(collectionName).GetSnapshotAsync();
 
-    private async void CheckValuesInFirestore(List<Tuple<Image, Image>> imagePairs, string dropdownValue)
-    {
-        Debug.Log("Checking values in Firestore...");
-
-        bool foundMatch = false;
-
-        QuerySnapshot snapshot = await db.Collection(collectionName).GetSnapshotAsync();
-
-        foreach (DocumentSnapshot document in snapshot.Documents)
-        {
-            Dictionary<string, object> data = document.ToDictionary();
-            string corrAnswer = data.ContainsKey("corr_answer") ? data["corr_answer"].ToString() : "";
-            string horizontalChoice = data.ContainsKey("horizontal_choice") ? data["horizontal_choice"].ToString() : "";
-            string verticalChoice = data.ContainsKey("vertical_choice") ? data["vertical_choice"].ToString() : "";
-
-            if (imagePairs.Any(pair => string.Equals(pair.Item1.sprite?.name, verticalChoice, StringComparison.OrdinalIgnoreCase)) &&
-                imagePairs.Any(pair => string.Equals(pair.Item2?.sprite?.name, horizontalChoice, StringComparison.OrdinalIgnoreCase)) &&
-                string.Equals(dropdownValue, corrAnswer, StringComparison.OrdinalIgnoreCase))
+            foreach (DocumentSnapshot document in snapshot.Documents)
             {
-                foundMatch = true;
-                Debug.Log("Success! Values matched with document: " + document.Id);
+                documentsChecked++; // Increment count for each document checked
+
+                Dictionary<string, object> data = document.ToDictionary();
+                string corrAnswer = data.ContainsKey("corr_answer") ? data["corr_answer"].ToString() : "";
+                string horizontalChoice = data.ContainsKey("horizontal_choice") ? data["horizontal_choice"].ToString() : "";
+                string verticalChoice = data.ContainsKey("vertical_choice") ? data["vertical_choice"].ToString() : "";
+
+                if (string.Equals(clueLeftImageName, verticalChoice, StringComparison.OrdinalIgnoreCase) &&
+                    string.Equals(clueAboveImageName, horizontalChoice, StringComparison.OrdinalIgnoreCase) &&
+                    string.Equals(dropdownValue, corrAnswer, StringComparison.OrdinalIgnoreCase))
+                {
+                    Debug.Log("Found match with document: " + document.Id);
+
+                    // Change the image of the corresponding button
+                    buttons[buttonIndex].GetComponent<Image>().sprite = imagesToShowOnMatch[0];
+                    buttons[buttonIndex].interactable = false;
+                    buttonImagesChanged++; // Increment buttonImagesChanged when a match is found
+                    buttonMatches[button]++; // Increment the count of correct matches for this button
+                }
+            }
+
+            buttonsProcessed++; // Increment the counter
+
+            // Log the number of documents checked
+            Debug.Log("Documents checked: " + documentsChecked);
+
+            // Log the total number of button images changed after all buttons are checked
+            if (buttonsProcessed == buttons.Length) // Check if all buttons are processed
+            {
+                Debug.Log("Button images changed: " + buttonImagesChanged);
+                if (buttonImagesChanged == 0) // Check if only one button image is changed
+                {
+                    StartCoroutine(AnimateNoMatchImage());
+                }
+            }
+        }
+
+        // Check if any button has multiple matches and display noMatchImage accordingly
+        foreach (var match in buttonMatches)
+        {
+            if (match.Value > 1)
+            {
+                StartCoroutine(AnimateSameAnswer());
                 break;
             }
         }
 
-        ChangeButtonImage(foundMatch);
+        // Enable submit button and resume timer
+        submitButton.interactable = true;
+        loadingAnimation.SetActive(false);
+        timerRunning = true; // Resume the timer
+        StartCoroutine(StartGameTimer()); // Restart the timer
     }
 
-    private void CreateImagePairs()
+    private IEnumerator AnimateNoMatchImage()
     {
-        for (int i = 0; i < clueLeftImages.Length; i++)
+        noMatchImage.gameObject.SetActive(true);
+
+        // Fade in
+        float timer = 0f;
+        Color startColor = noMatchImage.color;
+        Color targetColor = new Color(startColor.r, startColor.g, startColor.b, 1f);
+        while (timer < fadeInTime)
         {
-            imagePairs.Add(new Tuple<Image, Image>(clueLeftImages[i], clueAboveImages[i]));
-        }
-    }
-
-    private void ChangeButtonImage(bool foundMatch)
-    {
-        if (foundMatch)
-        {
-            // Increment the count of image changes
-            imageChangeCount++;
-
-            // Change the image of the last clicked button
-            buttons[lastClickedButtonIndex].GetComponent<Image>().sprite = imagesToReplace[imageChangeCount - 1];
-            buttons[lastClickedButtonIndex].interactable = false;
-
-            // Check if the finish condition is met
-            if (imageChangeCount >= 5)
-            {
-                FinishGame();
-            }
-        }
-    }
-
-    private void SetCurrentPlayerImage()
-    {
-        currentPlayerImage.sprite = imagesToReplace[0]; // Set initial image
-    }
-
-    private void StartStopwatch()
-    {
-        stopwatchCoroutine = StartCoroutine(Stopwatch());
-    }
-
-    private void StopStopwatch()
-    {
-        if (stopwatchCoroutine != null)
-        {
-            StopCoroutine(stopwatchCoroutine);
-        }
-    }
-
-    private IEnumerator Stopwatch()
-    {
-        while (!isGameFinished)
-        {
+            timer += Time.deltaTime;
+            noMatchImage.color = Color.Lerp(startColor, targetColor, timer / fadeInTime);
             yield return null;
         }
+        noMatchImage.color = targetColor;
+
+        // Wait for display time only if the image is visible
+        if (noMatchImage.gameObject.activeSelf)
+            yield return new WaitForSeconds(displayTime);
+
+        // Fade out
+        timer = 0f;
+        startColor = noMatchImage.color;
+        targetColor = new Color(startColor.r, startColor.g, startColor.b, 0f);
+        while (timer < fadeOutTime)
+        {
+            timer += Time.deltaTime;
+            noMatchImage.color = Color.Lerp(startColor, targetColor, timer / fadeOutTime);
+            yield return null;
+        }
+        noMatchImage.color = targetColor;
+
+        noMatchImage.gameObject.SetActive(false);
     }
 
-    private void FinishGame()
+    private IEnumerator AnimateSameAnswer()
     {
-        StopStopwatch();
-        isGameFinished = true;
+        sameAnswerImage.gameObject.SetActive(true);
+
+        // Fade in
+        float timer = 0f;
+        Color startColor = sameAnswerImage.color;
+        Color targetColor = new Color(startColor.r, startColor.g, startColor.b, 1f);
+        while (timer < fadeInTime)
+        {
+            timer += Time.deltaTime;
+            sameAnswerImage.color = Color.Lerp(startColor, targetColor, timer / fadeInTime);
+            yield return null;
+        }
+        sameAnswerImage.color = targetColor;
+
+        // Wait for display time only if the image is visible
+        if (sameAnswerImage.gameObject.activeSelf)
+            yield return new WaitForSeconds(displayTime);
+
+        // Fade out
+        timer = 0f;
+        startColor = sameAnswerImage.color;
+        targetColor = new Color(startColor.r, startColor.g, startColor.b, 0f);
+        while (timer < fadeOutTime)
+        {
+            timer += Time.deltaTime;
+            sameAnswerImage.color = Color.Lerp(startColor, targetColor, timer / fadeOutTime);
+            yield return null;
+        }
+        sameAnswerImage.color = targetColor;
+
+        sameAnswerImage.gameObject.SetActive(false);
+    }
+
+    private void EndGame()
+    {
+        // Disable button and show game over panel
+        submitButton.interactable = false;
+        foreach (var button in buttons)
+        {
+            button.interactable = false;
+        }
         gameOverPanel.SetActive(true);
-        TextMeshProUGUI gameOverText = gameOverPanel.GetComponentInChildren<TextMeshProUGUI>();
-        float completionPercentage = (float)imageChangeCount / 45f * 100f;
-        gameOverText.text = "Completed: " + completionPercentage.ToString("F2") + "%";
     }
 }
