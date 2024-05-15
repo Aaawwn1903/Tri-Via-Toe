@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "534986532860-h18fnv70ru32mhggtctl384oukaqdnkq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dagoeng.triviatoe",
+            "certificate_hash": "880c036a355ee9db24f8f361f893cf479245aec6"
+          }
+        },
+        {
           "client_id": "534986532860-h8de95el97nb30hlker9jk9lmbo7qdrd.apps.googleusercontent.com",
           "client_type": 3
         }

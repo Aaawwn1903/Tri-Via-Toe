@@ -9,7 +9,7 @@ using System.Collections;
 
 public class TicTacToeGame : MonoBehaviour
 {
-    public TMP_Dropdown searchResultDropdown;
+    [SerializeField] private Button[] answerButton;
     public Button submitButton;
     public Image[] clueAboveImages;
     public Image[] clueLeftImages;
@@ -48,8 +48,14 @@ public class TicTacToeGame : MonoBehaviour
     private void Start()
     {
         db = FirebaseFirestore.DefaultInstance;
-        submitButton.onClick.AddListener(SubmitData);
+        // submitButton.onClick.AddListener(SubmitData);
+        for (int i = 0; i < answerButton.Length; i++)
+        {
+             int buttonIndex = i;
+             answerButton[i].onClick.AddListener(() => OnAnswerButtonClick(buttonIndex));
+        }
 
+        
         for (int i = 0; i < buttons.Length; i++)
         {
             int buttonIndex = i;
@@ -67,29 +73,36 @@ public class TicTacToeGame : MonoBehaviour
         SetCurrentPlayerImage();
     }
 
+    private void OnAnswerButtonClick(int buttonIndex)
+    {
+    string selectedAnswer = answerButton[buttonIndex].GetComponentInChildren<Text>().text;
+    SubmitData(selectedAnswer);
+    }
+
+
     private void OnButtonClick(int buttonIndex)
     {
-        Debug.Log("Button clicked: " + buttonIndex);
+        // Debug.Log("Button clicked: " + buttonIndex);
         lastClickedButtonIndex = buttonIndex;
         // ResetTimer();
     }
 
-    private void SubmitData()
+    private void SubmitData(string selectedAnswer)
+{
+    if (lastClickedButtonIndex == -1)
     {
-        if (lastClickedButtonIndex == -1)
-        {
-            Debug.LogWarning("No button has been clicked.");
-            return;
-        }
-
-        string dropdownValue = searchResultDropdown.options[searchResultDropdown.value].text;
-        int row = lastClickedButtonIndex / 3;
-        int col = lastClickedButtonIndex % 3;
-        string clueLeftImageName = clueLeftImages[row].sprite != null ? clueLeftImages[row].sprite.name : "null";
-        string clueAboveImageName = clueAboveImages[col].sprite != null ? clueAboveImages[col].sprite.name : "null";
-
-        CheckValuesInFirestore(clueLeftImageName, clueAboveImageName, dropdownValue);
+        Debug.LogWarning("No button has been clicked.");
+        return;
     }
+
+    int row = lastClickedButtonIndex / 3;
+    int col = lastClickedButtonIndex % 3;
+    string clueLeftImageName = clueLeftImages[row].sprite != null ? clueLeftImages[row].sprite.name : "null";
+    string clueAboveImageName = clueAboveImages[col].sprite != null ? clueAboveImages[col].sprite.name : "null";
+
+    CheckValuesInFirestore(clueLeftImageName, clueAboveImageName, selectedAnswer);
+}
+
 
     private async void CheckValuesInFirestore(string clueLeftImageName, string clueAboveImageName, string dropdownValue)
     {

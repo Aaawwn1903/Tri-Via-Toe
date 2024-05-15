@@ -1,11 +1,13 @@
 using UnityEngine;
 using TMPro;
+using Unity.Collections;
 
 public class PopupController : MonoBehaviour
 {
     // References to the TMP components
     private TMP_InputField inputField;
     private TMP_Dropdown dropdown;
+    private int x;
 
     private bool isActive = false; // Track whether the popup is active
 

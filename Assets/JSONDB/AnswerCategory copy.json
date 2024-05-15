@@ -1,0 +1,1960 @@
+[
+    {
+        "Danau" : {
+        "documents": [
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Danau Aneuk Laot"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Danau Laut Tawar"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Danau Toba"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Danau Sidihoni"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Danau Aek Natonang"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Danau Lau Kawar"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Danau Maninjau"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Danau Singkarak"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Danau Ranau"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Danau Biru"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Danau Tasikardi"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Situ Cileunca"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Situ Cisanti"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Situ Patenggang"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Situ Bagendit"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Telaga Ngebel"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Ranu Kumbolo"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Ranu Regulo"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Ranu Pani"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Danau Rawa Pening"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Danau Labuan Cermin"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Danau Kakaban"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Danau Tulung NiLenggo"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Danau Sentarum"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Danau Semayang"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Danau Cermin Lamaru"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Danau Haifine"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Danau Biru"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Danau Mupa"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Danau Sebedang"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Danau Towuti"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Danau Matano"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Danau Poso"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Danau Tempe"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Danau Tondano"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Danau Mahalona"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Danau Lindu"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Danau Laut Tawar"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Danau Matano"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Danau Limboto"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Danau Batur"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Danau Beratan"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Danau Buyan"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Danau Tamblingan"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Danau Kelimutu"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Danau Sano Nggoang"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Danau Rana Mese"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Danau Moso"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Danau Ombo Tonda"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Danau Embung Sompa"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Danau Satonda"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Telaga Lompa"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Waduk Mamak"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Danau Lebo"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Danau Sentani"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Danau Anggi"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Danau Paniai"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Danau Yamur"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Danau Tigi"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Danau Amingme"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Danau Tigi"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Danau Habbema"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Danau Hujung"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Danau Baliem"
+            }
+        ]
+    }   
+    },
+    {
+        "Gunung" : {
+        "documents": [
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Gunung Leuser"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Gunung Marapi"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Gunung Talamau"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Gunung Kerinci"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Gunung Sibayak"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Gunung Bandahara"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Gunung Krakatau"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Gunung Sinabung"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Gunung Singgalang"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Gunung Kembar"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Gunung Semeru"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Gunung Slamet"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Gunung Ijen"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Gunung Lawu"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Gunung Arjuno"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Gunung Raung"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Gunung Salak"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Gunung Merbau"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Gunung Bromo"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Gunung Merapi"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Gunung Kinabalu"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Gunung Batu Karang"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Gunung Liang Kabung"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Gunung Melunggung"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Gunung Penrissen"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Gunung Meratus"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Gunung Murung"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Gunung Liang Kedangkai"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Gunung Seminung"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Gunung Palung"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Gunung Soputan"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Gunung Lokon"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Gunung Klabat"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Gunung Batur"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Gunung Colo"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Gunung Ambang"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Gunung Tambora"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Gunung Latimojong"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Gunung Rantekombola"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Gunung Lompobattang"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Gunung Agung"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Gunung Batur"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Gunung Abang"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Gunung Batukaru"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Gunung Catur"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Gunung Penulisan"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Gunung Rinjani"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Gunung Tambora"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Gunung Inerie"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Gunung Kelimutu"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Gunung Ranakah"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Gunung Egon"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Gunung Meja"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Gunung Mutis"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Gunung Fatu Timau"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Gunung Tenau"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Puncak Jaya"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Puncak Mandala"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Puncak Trikora"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Puncak Yamin"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Puncak Sugapa"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Puncak Jorgen"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Puncak Mandala Utara"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Puncak Sumantri"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Puncak Trikora Selatan"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Puncak Jayawijaya"
+            }
+        ]
+    }
+    },
+    {
+        "Kota" : {
+        "documents": [
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Kota Banda Aceh"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Kota Jambi"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Kota Bengkulu"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Kota Pekanbaru"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Kota Padang"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Kota Medan"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Kota Bandar Lampung"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Kota Metro"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Kota Bukittinggi"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Kota Sabang"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Jakarta"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Surabaya"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Malang"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Bandung"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Bekasi"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Yogyakarta"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Bogor"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Banten"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Kediri"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Semarang"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Banjarmasin"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Balikpapan"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Bontang"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Tarakan"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Pontianak"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Palangkalaraya"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Singakawang"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Banjarbaru"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Samarinda"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Ketapang"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Makassar"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Manado"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Palu"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Kendari"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Mamuju"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Gorontalo"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Palopo"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Bitung"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Parepare"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Luwu"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Denpasar"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Mangupura"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Tabanan"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Negara"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Amlapura"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Bangli"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Semarapura"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Gianyar"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Singaraja"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Alor"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Belu"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Ende"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Flores Timur"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Kupang"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Lembata"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Malaka"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Manggarai"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Nagekeo"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Ngada"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Jayapura"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Sorong"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Manokwari"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Merauke"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Timika"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Biak"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Nabire"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Wamena"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Fakfak"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Sentani"
+            }
+        ]
+    }
+    },
+    {
+        "Makanan" : {
+        "documents": [
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Pisang Molen"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Sate Padang"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Rendang"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Tempoyak"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Otak-otak"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Sempolet"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Kernas"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Laksa"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Mie Aceh"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Meuseukat"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Emping"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Nasi Kebuli"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Soto Betawi"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Batagor"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Seblak"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Siomay"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Cuanki"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Lotek"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Gado-Gado"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Ketoprak"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Tempoyak"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Kalumpe"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Hintalu Karuang"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Nasi Jagung"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Patin Bakar"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Soto Banjar"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Udang Asam Manis"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Sayur Paku"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Sambal Tarakan"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Tempe Kering"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Soto Makassar"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Konro"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Pallubasa"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Pisang Epe"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Panada"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Tinutuan"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Kapurung"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Mie Kering"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Sop Saudara"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Binte Biluhuta"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Babi Guling"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Lawar"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Urutan"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Jeruk"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Sate Lilit"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Krupuk Celeng"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Pesan"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Jaje Uli"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Rujak Bali"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Laklak"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Ayam Taliwang"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Sate Rembiga"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Bebalung Soup"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Sambal Wanci"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Se'i"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Nasi Kuning Flores"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Ikan Bakar Kupang"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Kolo"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Catemak Jagung"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Jagung Bose"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Papeda"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Ikan Bakar"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Sagu"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Sagu Goroho"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Papeda Sagu"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Saksang"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Papeda Kuah Kuning"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Papeda Ikan Kuah Kuning"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Kepala Ikan Bakar"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Brengkes"
+            }
+        ]
+    }
+    },
+    {
+        "Pahlawan" : {
+        "documents": [
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Sisingamangaraja XII"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Tuanku Imam Bonjol"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Mohammad Hatta"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Tuanku Tambusai"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Raja Ali Haji"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Sultan Mahmud Badaruddin II"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "A.M Thalib"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Fatmawati"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Cut Nyak Dhien"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Raden Inten II"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Jenderal TNI Purn. Gatot Soebroto"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Ki Hajar Dewantara"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "KH. Fakhruddin"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Raden Ajeng Kartini"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Wage Rudolf Soepratman"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Dr. Cipto Mangunkusumo"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Jenderal Soedirman"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Pangeran Dipoengoro"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Jenderal Ahmad Yani"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Dr. Moewardi"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Pangeran Antasari."
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Brigjen Hasan Basri."
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Idham Chalid."
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Ir. Pangeran H. Mohammad Noor."
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Abdul Kadir."
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Tjilik Riwut."
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Drs. Saadilah Mursyid."
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Sultan Hidayatullah II."
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Hasanuddin HM"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Abdoel Moeis Hassan"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Sultan Hasanuddin"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Datu Museng"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Tan Malaka"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "I Gusti Ngurah Rai"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Andi Depu"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Andi Aziz"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Andi Pangerang Petta"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Otto Iskandardinata"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Andi Mappanyuki"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Raden Saleh Sjarif Boestaman"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "I Gusti Ngurah Rai"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Ida Dewa Agung Istri Kania"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Ida Bagus Mantra"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "I Gusti Ketut Jelantik"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "I Gusti Made Oka"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "I Gusti Ketut Pudja"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "I Gusti Ngurah Made Agung"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Ida I Dewa Agung Gede Agung"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "I Gusti Made Kaler"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "I Gusti Ketut Pudja"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Izaak Huru Doko"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Ratu Loli"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Wona Kaka"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Teka Iku"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Motang Rua"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Marilonga"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Lalu Abdul Kadir Manambai"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Sultan Muhammad Salahudin Bima"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Sultan Muhammad Kaharuddin III Sumbawa"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "TGKH M Zainuddin Abdul Madjid"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Frans Kaisiepo"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Arnold Ap"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Theys Hiyo Eluay"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Filep Karma"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Octovianus Mote"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Thomas Wainggai"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Willem Zonggonau"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Agus Alue Alua"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Tom Beanal"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Nicolaas Jouwe"
+            }
+        ]
+    }
+    },
+    {
+        "Sungai" : {
+        "documents": [
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Sungai Alas"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Krueng Aceh"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Sungai Asahan"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Sungai Barumun"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Batang Gadis"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Batang Hari"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Sungai Kampar"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Sungai Indragiri"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Sungai Lematang"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Sungai Musi"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Sungai Bengawan Solo"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Sungai Brantas"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Sungai Progo"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Sungai Citarum"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Sungai Serayu"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Sungai Solo"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Sungai Lamandau"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Sungai Cimanuk"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Sungai Cisadane"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Sungai Ciliwung"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Sungai Kapuas"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Sungai Barito"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Sungai Mahakam"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Sungai Rajang"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Sungai Mendawai"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Sungai Martapura"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Sungai Kinabatangan"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Sungai Melawi"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Sungai Mentaya"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Sungai Landak"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Sungai Walannae"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Sungai Rano"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Sungai Poso"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Sungai Masamba"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Sungai Mandar"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Sungai Sadang"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Sungai Pangkajene"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Sungai Bone"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Sungai Tondano"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Sungai Palu"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Sungai Ayung"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Sungai Unda"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Sungai Petanu"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Sungai Yeh Ho"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Sungai Tukad Bangkung"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Sungai Pakerisan"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Sungai Loloan"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Sungai Tukad Melangit"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Sungai Siap"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Sungai Tukad Tegallalang"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Sungai Jangkok"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Sungai Salog"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Sungai Cekok"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Sungai Cacaban"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Sungai Mules"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Sungai Wolowaru"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Sungai Molo"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Sungai Oehala"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Sungai Noel Besi"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Sungai Kambaniru"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Sungai Mamberamo"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Sungai Digul"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Sungai Baliem"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Sungai Weyland"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Sungai Lorentz"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Sungai Sepik"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Sungai Tariku"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Sungai Bian"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Sungai Arafuru"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Sungai Waripi"
+            }
+        ]
+    }
+    },
+    {
+        "Tari Tradisional" : {
+        "documents": [
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Tari Saman"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Tari Seudati"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Tari Serampang Dua Belas"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Tari Piring"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Tari Lilin"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Tari Payung"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Tari Sekapur Sirih"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Tari Selampit Delapan"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Tari Zapir"
+            },
+            {
+                "vertical_choice": "Sumatera",
+                "corr_answer": "Tari Gundala-Gundala"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Tari Serimpi"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Tari Bedhaya"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Tari Tayub"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Tari Gambyong"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Tari Gambir Anom"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Tari Sintren"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Tari Beksan Wireng"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Tari Bondan"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Tari Dolalak"
+            },
+            {
+                "vertical_choice": "Jawa",
+                "corr_answer": "Tari Lengger"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Tari Enggang"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Tari Baksa Kembang"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Tari Giring-Giring"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Tari Serampang 12"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Tari Mandau"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Tari Jepen"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Tari Rukai"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Tari Belian"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Tari Tarian Piring"
+            },
+            {
+                "vertical_choice": "Kalimantan",
+                "corr_answer": "Tari Hudoq"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Tari Tor-Tor"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Tari Pakarena"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Tari Ma'gellu"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Tari Pa'gellu"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Tari Ja'jaka"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Tari Pakarena"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Tari Rero"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Tari Pangalay"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Tari Piring"
+            },
+            {
+                "vertical_choice": "Sulawesi",
+                "corr_answer": "Tari Ambo"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Tari Kecak"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Tari Barong"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Tari Legong"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Tari Pendet"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Tari Joged Bumbung"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Tari Rejang"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Tari Baris"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Tari Topeng"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Tari Kebyar Duduk"
+            },
+            {
+                "vertical_choice": "Bali",
+                "corr_answer": "Tari Cendrawasih"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Tari Tenun"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Tari Likurai"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Tari Rato"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Tari Gatot"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Tari Sajojo"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Tari Tandak"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Tari Lariangi"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Tari Oncer"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Tari Lenggo"
+            },
+            {
+                "vertical_choice": "Nusa Tenggara",
+                "corr_answer": "Tari Pakon"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Tari Yambo Ramke Yambo"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Tari Sing-Sing"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Tari Kowari"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Tari Mbiwar"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Tari Kabasaran"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Tari Hudoq"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Tari Cendrawasih"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Tari Sajojo"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Tari Enggang"
+            },
+            {
+                "vertical_choice": "Papua",
+                "corr_answer": "Tari Amun"
+            }
+        ]
+    }
+    }
+]

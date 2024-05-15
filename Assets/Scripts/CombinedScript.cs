@@ -59,6 +59,7 @@ public class CombinedScript : MonoBehaviour
         searchInput.onValueChanged.AddListener(delegate {
             if (searchInput.text.Length >= 3)
                 PerformSearch();
+                
         });
     }
 
@@ -66,7 +67,6 @@ public class CombinedScript : MonoBehaviour
     {
         string searchTerm = searchInput.text.ToLower();
         searchResultDropdown.ClearOptions();
-
         // Debug.Log("Starting search...");
         db.Collection(collectionName).Document(documentName).GetSnapshotAsync().ContinueWith(task =>
         {
@@ -114,5 +114,6 @@ public class CombinedScript : MonoBehaviour
     {
         searchResultDropdown.ClearOptions();
         searchResultDropdown.AddOptions(results);
+           
     }
 }
