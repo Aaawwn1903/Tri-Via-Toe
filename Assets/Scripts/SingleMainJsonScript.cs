@@ -155,28 +155,30 @@ public class MainSingleJson : MonoBehaviour
 {
     if (message == "Game Over!\nYou lost all health!")
     {
-        // Reset the score to 0
-        SaveHighScore(0);
         // addHealthBar.gameObject.SetActive(true);
         Debug.Log("add healthbar will be available soon!!");
-    }
-    else
-    {
-        // Calculate and save the score
-        int changedButtonsCount = buttons.Count(button => !button.interactable);
-        int score = changedButtonsCount * 5 + (int)currentTime * 2;
-        SaveHighScore(score);
+        currentTime = 0; // Set the time to zero if the game ends due to health reaching zero
     }
 
-    // Display game over panel
+    bool healthZeroGameOver = message == "Game Over!\nYou lost all health!";
     noMatchImage.gameObject.SetActive(false);
     StopTimer();
+    int changedButtonsCount = buttons.Count(button => !button.interactable);
+    int score;
+    if (healthZeroGameOver) {
+        score = changedButtonsCount * 12; // Only count the button interactions for score
+    } else {
+        score = changedButtonsCount * 12 + (int)currentTime * 4; // Include time component for score
+    }
 
+    SaveHighScore(score);
     gameOverPanel.SetActive(true);
     TextMeshProUGUI gameOverText = gameOverPanel.GetComponentInChildren<TextMeshProUGUI>();
-    gameOverText.text = $"Your Score: {GetHighScore()}\nHigh Score: {GetHighScore()}";
-    healthRight.text =  $"{message}";
+    gameOverText.text = $"Your Score: {score}\nHigh Score: {GetHighScore()}";
+    healthRight.text = $"{message}";
 }
+
+
 
     private IEnumerator Timer()
     {

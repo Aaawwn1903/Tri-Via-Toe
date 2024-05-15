@@ -70,17 +70,10 @@ public class VersusJson : MonoBehaviour
         surrenderConfirmationPanel.SetActive(false);
         forceTieConfirmationPanel.SetActive(false);
         SetCurrentPlayerImage();
-        PlayerTurnText();
+       
     }
 
-    private void PlayerTurnText()
-    {
-        string playerSymbol = player1Turn ? "X" : "O";
-        Color playerColor = player1Turn ? new Color(245f / 255f, 77f / 255f, 98f / 255f) : new Color(135f / 255f, 228f / 255f, 58f / 255f);
-        string colorHex = ColorUtility.ToHtmlStringRGB(playerColor);
-        string coloredPlayerSymbol = $"<color=#{colorHex}>{playerSymbol}</color>";
-        playerTurn.text = "PLAYER " + (player1Turn ? "1" : "2") + "'S TURN: " + coloredPlayerSymbol;
-    }
+    
     private void LoadDataFromJSON()
     {
         if (jsonData != null)
@@ -291,9 +284,13 @@ public class VersusJson : MonoBehaviour
 
     private IEnumerator Timer()
     {
+        string playerSymbol = player1Turn ? "X" : "O";
+        Color playerColor = player1Turn ? new Color(245f / 255f, 77f / 255f, 98f / 255f) : new Color(135f / 255f, 228f / 255f, 58f / 255f);
+        string colorHex = ColorUtility.ToHtmlStringRGB(playerColor);
+        string coloredPlayerSymbol = $"<color=#{colorHex}>{playerSymbol}</color>";
+        playerTurn.text = "PLAYER " + (player1Turn ? "1" : "2") + "'S TURN: " + coloredPlayerSymbol;
+
         float currentTime = timePerPlayer;
-
-
         while (currentTime > 0f)
         {
             // Check for game tied or player wins before decrementing time

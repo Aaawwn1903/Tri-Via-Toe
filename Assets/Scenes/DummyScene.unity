@@ -8888,9 +8888,9 @@ MonoBehaviour:
   confirmSurrenderButton: {fileID: 559326596}
   cancelSurrenderButton: {fileID: 1301547314}
   noMatchImage: {fileID: 46284868}
-  fadeInTime: 0.5
-  fadeOutTime: 0.5
-  displayTime: 1
+  fadeInTime: 0.25
+  fadeOutTime: 0.25
+  displayTime: 0.5
   jsonData: {fileID: 4900000, guid: e9d640f66aa7cf04bbd7cfc1362c3081, type: 3}
   timePerPlayer: 16
 --- !u!4 &1521754493

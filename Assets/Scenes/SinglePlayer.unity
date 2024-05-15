@@ -5986,7 +5986,7 @@ MonoBehaviour:
   noMatchImage: {fileID: 1632909977}
   fadeInTime: 0.25
   fadeOutTime: 0.25
-  displayTime: 1
+  displayTime: 0.5
   healthBar: 3
   healthBarIMG: {fileID: 714625817}
   jsonData: {fileID: 4900000, guid: 6211a12561020624f934e416f0f48b10, type: 3}
