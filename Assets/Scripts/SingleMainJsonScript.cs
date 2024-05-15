@@ -21,6 +21,7 @@ public class MainSingleJson : MonoBehaviour
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI healthLeft;
     public TextMeshProUGUI healthRight;
+    public Text progres;
     public Image noMatchImage;
     public float fadeInTime = 0.5f;
     public float fadeOutTime = 0.5f;
@@ -54,6 +55,8 @@ public class MainSingleJson : MonoBehaviour
             buttons[i].onClick.AddListener(() => OnButtonClick(buttonIndex));
         }
         StartTimer();
+        
+
         // healthBarIMG.GetComponent<Image>().sprite = clueRightImages[0];
         
     }
@@ -138,10 +141,18 @@ public class MainSingleJson : MonoBehaviour
             buttons[lastClickedButtonIndex].GetComponent<Image>().sprite = currentPlayerImages[0];
             buttons[lastClickedButtonIndex].interactable = false;
             CheckGameOver();
-            StartTimer();
+            UpdatePercentage();
         }
+        
     }
 
+    private void UpdatePercentage()
+    {
+    int totalButtons = buttons.Length;
+    int changedButtonsCount = buttons.Count(button => !button.interactable);
+    float percentage = (float)changedButtonsCount / totalButtons * 100f;
+    progres.text = $"Progress: {percentage:F2}%"; // Display the percentage with 2 decimal places
+    }
     private void CheckGameOver()
     {
         bool allButtonsChanged = buttons.All(button => !button.interactable);
@@ -168,7 +179,7 @@ public class MainSingleJson : MonoBehaviour
     if (healthZeroGameOver) {
         score = changedButtonsCount * 12; // Only count the button interactions for score
     } else {
-        score = changedButtonsCount * 12 + (int)currentTime * 4; // Include time component for score
+        score = changedButtonsCount * 12 + (int)currentTime * 3; // Include time component for score
     }
 
     SaveHighScore(score);
